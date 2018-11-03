@@ -14,12 +14,8 @@ public class NormalLonelyTweet extends Tweet {
 
 	@Override
 	public boolean isValid() {
-		if (getTweetBody().trim().length() == 0
-				|| getTweetBody().trim().length() > 10) {
-			return false;
-		}
 
-		return true;
+		return !(getTweetBody().trim().length() == 0 || getTweetBody().trim().length() > 20);
 	}
 
 	@Override

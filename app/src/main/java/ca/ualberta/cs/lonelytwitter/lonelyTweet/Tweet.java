@@ -23,7 +23,7 @@ public abstract class Tweet implements Serializable {
         this.tweetDate = tweetDate;
     }
 
-    public abstract String getTweetBody();
+    protected abstract String getTweetBody();
 
     public void setTweetBody(String tweetBody) {
         this.tweetBody = tweetBody;

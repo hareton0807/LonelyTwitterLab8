@@ -1,0 +1,61 @@
+----->Issue 1:
+No label views point to this text field with an 'android:labelFor="@+id/body"' attribute
+
+Why:
+The labelFor is an attribute for accessibility options. You assign this to a label so that  android can know what to read to users when a textedit field is clicked. 
+
+How I fixed it:
+Add a line in the main.xml file:
+(<EditText
+	android:labelFor="@id/body" />)
+
+----->Issue 2:
+Hardcoded string "My old tweets", should use '@string' resource
+
+Why:
+Hardcoded string is hard to modify. 
+
+How I fixed it:
+Add the string to the '@string' resource
+
+----->Issue 3:
+Redundant 'if' statement - if statement can be simplified
+
+Why: 
+Make the code look simple and easy to understand
+
+How I fixed it: 
+Use one line statement instead of four line statements
+
+Originally:
+if (getTweetBody().trim().length() == 0
+				|| getTweetBody().trim().length() > 20) {
+			return false;
+		}
+
+		return true;
+
+Changed to:
+return !(getTweetBody().trim().length() == 0 || getTweetBody().trim().length() > 20);
+
+----->Issue 4:
+Declaration redundancy: declaration access can be weaker
+
+How I fixed it:
+Originally:
+public abstract String getTweetBody();
+
+Changed to:
+protected abstract String getTweetBody();
+
+
+----->Issue 5:
+Unused resources: The resource 'R.string.important_identifier' appears to be used
+
+How I fixed it:
+Delete it
+
+
+
+
+
